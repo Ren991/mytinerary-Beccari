@@ -1,0 +1,35 @@
+
+.img{
+   
+    border-radius:0.8rem;
+    height:18rem;
+    margin-bottom:1rem;
+    
+    
+}
+.Carousel{
+    margin-top: 2rem;
+    background-color:rgb(255, 255, 255);
+    width:75%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2rem;
+    
+   
+}
+
+
+.imgText{
+    width:100%;
+   
+    background-color: rgb(90, 103, 224);
+    border:1px solid rgb(0, 0, 0);
+    border-radius:0.8rem;
+    margin-top:1rem;
+}
+
+.imgText:hover{
+    background-color:rgba(78, 71, 168, 0.767);
+    border:2px solid rgb(0, 0, 0);
+
+}
