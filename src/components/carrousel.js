@@ -2,7 +2,7 @@
 import React from 'react'
 import Carousel from 'react-grid-carousel'
 import "../styles/styles.css";
-import Cities from "./cities"
+import CitiesInfo from "./citiesData"
 
  const Carrousel = () => {
   return (
@@ -33,22 +33,18 @@ import Cities from "./cities"
       ]}
       mobileBreakpoint={164}
       >
-      { Cities.map(city=>
-        <Carousel.Item >
+      { CitiesInfo.map((city,index)=>
+        <Carousel.Item key={index}>
+          
             <div className="imgText">
-            <h3 style={{position:'relative',color:'white',right:2}}>{city.name}</h3>
-            <img className="img" width="90%" src={process.env.PUBLIC_URL+`/imagenes/${city.image}`}/>
+            <h3  style={{position:'relative',color:'white',right:2}}>{city.name}</h3>
+            <img className="img"  src={process.env.PUBLIC_URL+`/imagenes/${city.image}`}width="90%"/>
             
             </div>
         </Carousel.Item>
         
        )}
-      
-      
-      
-      
-     
-    </Carousel>
+      </Carousel>
     </div>
   )
 }

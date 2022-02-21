@@ -1,3 +1,24 @@
+.imgHero{
+    height:42rem;
+    
+}
+.logoDiv{
+    position:absolute;
+    bottom:12rem;
+    text-align:center;
+    width:100%;
+    color:rgb(255, 255, 255);
+    max-height:20rem;
+}
+.slogan{
+    
+    color:rgba(255, 255, 255, 0.911);
+    width:100%;
+    font-family:serif ;
+    font-weight:600;
+}
+
+/*Call to action*/
 
 .callContainer{
     padding-top:4rem;
@@ -51,10 +72,3 @@
   }
 }
 
-
-
-
-
-.imgContainer{
-    display: flex;
-}

@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-
+import {Link as LinkRouter} from 'react-router-dom'
 import "../styles/styles.css";
 
 const pages = ['Home', 'Cities'];
@@ -42,12 +42,12 @@ const BarButtons = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-             myTinerary
+             MyTinerary
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -79,11 +79,22 @@ const BarButtons = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
+            
+                
+                <MenuItem>
+           <LinkRouter to="/cities" className="responsiveButton" >
+           cities
+           </LinkRouter>
+          </MenuItem>
+
+          <MenuItem>
+          <LinkRouter to="/" className="responsiveButton">
+            Home
+          </LinkRouter>
+          </MenuItem>
+                  
+                
+              
             </Menu>
           </Box>
           <Typography
@@ -92,20 +103,24 @@ const BarButtons = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-           myTinerary
+           MyTinerary
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+          
+          <LinkRouter to="cities" >
+          <MenuItem>
+          <Button className="link">Cities</Button>
+          </MenuItem>
+          </LinkRouter>
+           
+           <LinkRouter to="/" >
+           <MenuItem>
+           <Button className="link">Home</Button>
+           </MenuItem>
+           </LinkRouter>
+          
 
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -135,10 +150,13 @@ const BarButtons = () => {
               ))}
             </Menu>
           </Box>
+          
         </Toolbar>
       </Container>
     </AppBar>
-    
+  
   );
+
+ 
 };
 export default BarButtons;

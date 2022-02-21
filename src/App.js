@@ -1,24 +1,28 @@
 
 import './App.css';
 import BarButtons from './components/BarButtons';
-import Carrousel from './components/carrousel';
-import Hero from './components/hero'
-import CallToAction from './components/CallAction'
+import Home from './components/home'
 import Footer from './components/footer'
+import Cities from './components/cities'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+
 
 const App = () => {
   return (
+    
     <div className="App">
-    <BarButtons/> 
-    <Hero/>
     
-    <CallToAction/>
-    <Carrousel/>
+    <BrowserRouter>
+    <BarButtons/>
+    <Routes>
+    <Route path="/" element={<Home/>}/>  
+    <Route path="/cities" element={<Cities/>}/> 
+    </Routes>
     <Footer/>
-    
-
-    
+    </BrowserRouter>
     </div>
+     
   );
 }
 

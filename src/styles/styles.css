@@ -33,3 +33,41 @@
     border:2px solid rgb(0, 0, 0);
 
 }
+/*Navbar*/
+.link{
+    color:white!important;
+   
+   
+    
+}
+.navBar{
+    height:5rem !important;
+    justify-content: center;
+
+}
+.responsiveButton{
+    color:rgb(90, 103, 224);
+}
+/*Cities*/
+.citiesContainer{
+
+height:45rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+/*Footer*/
+
+.mainFooter{
+    height: 11rem;
+    background-color:rgb(84, 92, 209);
+}
+a{
+    margin:1rem;
+    text-decoration:none;
+    color:rgb(255, 255, 255);
+    font-size:1.3rem;
+}
