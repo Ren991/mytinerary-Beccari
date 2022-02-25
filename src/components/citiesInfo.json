@@ -1,0 +1,119 @@
+{ "citiesData":[{
+    "id": 1,
+    "image":"auckland.jpg", 
+    "name": "Auckland",
+    "country":"New Zeland",
+    "description":"Auckland, built around 2 major ports, is a major city in the north of the North Island of New Zealand. On central Queen Street, the iconic Sky Tower observation deck overlooks Viaduct Harbour, packed with superyachts and lined with bars and cafes. Auckland Domain, the oldest park in the city, is located around an extinct volcano and is home to the elegant Wintergardens or “Winter Gardens”.",
+    
+  },
+  {
+    "id": 2,
+    "image":"dublin.jpg",
+    "name": "Dublin",
+    "country":"Ireland",
+    "description":"Dublin, the capital of the Republic of Ireland, is located on the east coast of Ireland at the mouth of the River Liffey. Its historic buildings include Dublin Castle, dating from the 13th century, and the imposing St. Patrick's Cathedral, built in 1191. The city's attractively landscaped parks include St Stephen's Green and the sprawling Phoenix Park, home to the Dublin Zoo.",
+  },
+  {
+    "id": 3,
+    "image":"vancouver.jpg",
+    "name": "Vancouver",
+    "country":"Canada",
+    "description":"Vancouver is a bustling seaport on the west coast of British Columbia and is among Canada's densest and most ethnically diverse cities. It is a popular filming destination and is surrounded by mountains, as well as having an active arts, theater and music scene. The Vancouver Art Gallery is known for its works by regional artists, while the Museum of Anthropology houses sublime collections from Canada's First Nations.",
+  },
+  {
+    "id": 4,
+    "image":"los_angeles.jpg",
+    "name": "Los Angeles",
+    "country":"United States",
+    "description":"Los Angeles is a rapidly growing city in Southern California and is the hub of the country's television and film industries. Close to its iconic Hollywood sign, studios like Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours. On Hollywood Boulevard, Grauman's Chinese Theater sports celebrity handprints and footprints, the Walk of Fame commemorates thousands of stars, and vendors offer maps of famous homes.",
+    
+  },
+  {
+    "id": 5,
+    "image":"madrid.jpg",
+    "name": "Madrid",
+    "country":"Spain",
+    "description":"Madrid is the central capital of Spain with elegant boulevards and large well-kept parks, such as the Buen Retiro. It is famous for its rich collections of European art, with works by Goya, Velázquez and other Spanish masters in the Prado Museum. The heart of old Habsburg Madrid is the portico-lined Plaza Mayor and nearby is the Royal Palace and the Armory, displaying historic arsenals.",
+   
+  },
+  {
+    "id": 6,
+    "image":"lyon.jpg",
+    "name": "Lyon",
+    "country":"France",
+    "description":"Lyon, a city in the historic Rhône-Alpes region of France, is located at the junction of the Rhône and Saône rivers. Its center reflects two thousand years of history, with the Roman Three Gaul Amphitheater, medieval and Renaissance architecture in Old Lyon, and the modern Confluence district on the Presqu'île peninsula. The traboules, covered passageways between buildings, connect Old Lyon with the Croix-Rousse hill.",
+  
+  },
+  {
+    "id": 7,
+    "image":"venecia.jpg",
+    "name": "Venecia",
+    "country":"Italy",
+    "description":"Venecia, la capital de la región de Véneto en el norte de Italia, abarca más de 100 islas pequeñas en una laguna del mar Adriático. No tiene caminos, sino solo canales, incluida la vía pública del Gran Canal, bordeada de palacios renacentistas y góticos. En la plaza central de San Marcos, se encuentra la basílica de San Marcos, que tiene un suelo de mosaicos bizantinos, y el campanario Campanile con vista a los techos rojos de la ciudad.",
+   
+  },
+  {
+    "id": 8,
+    "image":"bruselas.jpg",
+    "name": "Brussels",
+    "country":"Belgium",
+    "description":"Brussels is the capital of Belgium and the city that best defines the country. You'll find it packed with art deco taverns, truly unique Flemish works of art, spectacular gothic cathedrals and charming guild houses. The city's calendar of activities does not rest at any time of the year, and in its streets you will discover parks full of flowers, architectural monuments and an ancient cultural and artistic legacy. And if that were not enough, between visits you can taste the famous Belgian chocolate and the endless range of local beers.",
+    
+  },
+  {
+    "id": 9,
+    "image":"bogota.jpg",
+    "name": "Bogota",
+    "country":"Colombia",
+    "description":"Bogotá is the extensive high altitude capital of Colombia. La Candelaria, its cobblestoned center, boasts colonial sites like the neoclassical Teatro Colón and the 17th-century Iglesia de San Francisco. It is also home to popular museums, including the Museo Botero, which exhibits art by Fernando Botero, and the Museo del Oro, with pre-Columbian gold pieces.",      
+  },
+  {
+    "id": 10,
+    "image":"santiago.jpg",
+    "name": "Santiago",
+    "country":"Chile",
+    "description":"Santiago, la capital y la ciudad más grande de Chile, se ubica en un valle rodeado de cimas nevadas de los Andes y la Cordillera de la Costa chilena. La Plaza de Armas, el gran núcleo del centro colonial antiguo de la ciudad, tiene 2 monumentos neoclásicos: el Palacio de la Real Audiencia de 1808, donde está el Museo Histórico Nacional, y la Catedral Metropolitana del siglo XVIII. La Chascona es la casa transformada en museo del poeta Pablo Neruda.",
+  },
+  {
+    "id": 11,
+    "image":"rio.jpg",
+    "name": "Rio do Janeiro",
+    "country":"Brazil",
+    "description":"Rio do Janeiro is a huge coastal city in Brazil, famous for its Copacabana and Ipanema beaches, the 38m-high statue of Christ the Redeemer atop Corcovado Hill, and the Sugar Loaf Mountain, a granite peak with cable cars rising up to its top. The city is also known for its sprawling favelas. The raucous Carnival festival, with parades of floats, extravagant costumes and samba dancers, is considered the largest in the world.",
+  
+  },
+  {
+    "id": 12,
+    "image":"valparaiso.jpg",
+    "name": "Valparaiso",
+    "country":"Chile",
+    "description":"Valparaíso es una ciudad portuaria de la costa de Chile. Es conocida por sus empinados funiculares y las coloridas casas sobre los cerros. La Sebastiana, la extravagante residencia antigua del poeta chileno Pablo Neruda, es actualmente un museo con amplias vistas del Pacífico. Durante el siglo XIX, una afluencia de inmigrantes europeos dejó su huella en la arquitectura de la ciudad y las instituciones culturales, muchas de las cuales se congregan en torno a la Plaza Sotomayor en el centro de la ciudad. ",
+   
+  }
+  ,
+  {
+    "id": 13,
+    "image":"morocco.jpg",
+    "name": "Rabat",
+    "country":"Morocco",
+    "description":"Rabat, the capital of Morocco, is located on the coast of the Bu Regreg River and the Atlantic Ocean. It is known for emblematic sites that show the Islamic and French colonial heritage, such as the Kasbah of the Udayas. This Berber-era royal fort is surrounded by French gardens that overlook the ocean. The iconic Hassan Tower is a 12th-century minaret that stands on the ruins of a mosque.",
+   
+  },
+  {
+    "id": 14,
+    "image":"moscow.jpg",
+    "name": "Moscow",
+    "country":"Russia",
+    "description":"Moscow is located on the Moskva River in western Russia and is the nation's cosmopolitan capital. In its historic center, there is the Kremlin, a complex that houses the president and treasures of the tsars in the Armory. Outside its walls is Red Square, the symbolic center of Russia. Here is the Lenin Mausoleum, the comprehensive collection of the State Historical Museum and St. Basil's Cathedral, known for its colorful onion domes.",
+  
+  },
+  {
+    "id": 15,
+    "image":"tokyo.jpg",
+    "name": "Tokyo",
+    "country":"Japan",
+    "description":"Tokyo, Japan's bustling capital, mixes the ultra-modern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding forests. The Imperial Palace is located in the middle of large public gardens. The city's various museums offer exhibits ranging from classical art (at the Tokyo National Museum) to a reconstructed kabuki theater (at the Edo-Tokyo Museum).",
+   
+  }
+]
+}

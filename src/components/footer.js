@@ -3,13 +3,15 @@ import "../styles/styles.css";
 import instagram from './assets/instagram.png'
 import facebook from './assets/facebook.png'
 import twitter from './assets/twitter.png'
+import logo from './assets/logo.png'
 import {Link as LinkRouter} from 'react-router-dom'
 
 const Footer = () => {
   return(
     <div className="mainFooter">
      <h3>My Tinerary||All rights reserved </h3>
-     <LinkRouter to="/" className="FooterButton">
+     <img width="50rem"  src={logo}/>
+     <LinkRouter to="/" className="FooterButton" >
      Home
      </LinkRouter>
     
