@@ -2,60 +2,52 @@ import React from "react";
 import "../styles/styles.css";
 import { useState } from "react";
 import { Fade } from "react-bootstrap";
-import CitiesInfo from "./citiesData";
+import {Link as LinkRouter} from 'react-router-dom'
 
-function Example() {
+
+function Example(props) {
+  
   const [open, setOpen] = useState(false);
+  const cities = props.cities;
+  console.log(props);
 
-  return CitiesInfo.map((city, index) => (
-    <div className="cityCard" key={index}>
-      <img
-        className="imgCard"
-        src={process.env.PUBLIC_URL + `/imagenes/${city.image}`}
-        width="90%"
-      />
+  return (
+    <>
+    hola
+     {/*  {cities.length > 0 ? (
+        cities?.map((city, index) => (
+          <div className="cityCard" key={index}>
+            <img
+              className="imgCard"
+              src={process.env.PUBLIC_URL + `/imagenes/${city.image}`}
+              width="90%"
+            />
 
-      <div className="cardContainer">
-        <h2
-          href="#"
-          onMouseOver={() => setOpen(!open)}
-          aria-controls="description-city"
-          aria-expanded={open}
-        >
-          {city.name}
-        </h2>
-        <h6>{city.country}</h6>
-        <Fade in={!open}>
-          <div className="cityDescription" id="description-city">{city.description}</div>
-        </Fade>
-      </div>
-    </div>
-  ));
+            <div className="cardContainer">
+              <LinkRouter to={`/citiesDetails/${city._id}`}>
+              <h2
+                
+                onMouseOver={() => setOpen(!open)}
+                aria-controls="description-city"
+                aria-expanded={open}
+              >
+                {city.name}
+              </h2>
+              </LinkRouter>
+              <h6>{city.country}</h6>
+              <Fade in={!open}>
+                <div className="cityDescription" id="description-city">
+                  {city.description}
+                </div>
+              </Fade>
+            </div>
+          </div>
+        ))
+      ) : (
+        <h1 className="noResults">No results found </h1>
+      )} */}
+    </>
+  );
 }
 
 export default Example;
-
-/*const DisplayCards = () => {
-  const [visible, SetVisible] = useState(false);
-
-  const changeVisibility = () => {
-    SetVisible(!visible);
-  };
-  return (
-    <>
-      <img className="citiesImg" src={testCard}></img>
-      <div className="cardContainer">
-
-        <h1>Name city</h1>
-      
-        <h1 onMouseOver={changeVisibility}>
-          {visible ? "show info" : "less info"}
-        </h1>
-        {(visible && "Press for more info")||
-          (!visible && "Press for less info")}
-      </div>
-    </>
-  );
-};
-export default DisplayCards;
-*/

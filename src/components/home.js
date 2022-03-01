@@ -10,6 +10,7 @@ import {Link as LinkRouter} from 'react-router-dom'
 
 
 const Home = () => {
+  window.scrollTo({top: 0, behavior: "smooth"})
     return (
       <div>
       <img className="imgHero" width="100%"  src={airplane}/> 

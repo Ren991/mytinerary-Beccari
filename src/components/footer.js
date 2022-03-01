@@ -7,6 +7,7 @@ import logo from './assets/logo.png'
 import {Link as LinkRouter} from 'react-router-dom'
 
 const Footer = () => {
+  window.scrollTo({top: 0, behavior: "smooth"})
   return(
     <div className="mainFooter">
      <h3>My Tinerary||All rights reserved </h3>

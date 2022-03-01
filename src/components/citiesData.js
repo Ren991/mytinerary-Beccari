@@ -58,7 +58,7 @@ const CitiesInfo =[
       "image":"bruselas.jpg",
       "name": "Brussels",
       "country":"Belgium",
-      "description":"Brussels is the capital of Belgium and the city that best defines the country. You'll find it packed with art deco taverns, truly unique Flemish works of art, spectacular gothic cathedrals and charming guild houses. The city's calendar of activities does not rest at any time of the year, and in its streets you will discover parks full of flowers, architectural monuments and an ancient cultural and artistic legacy. ",
+      "description":"Brussels is the capital of Belgium and the city that best defines the country. You'll find it packed with art deco taverns, truly unique Flemish works of art, spectacular gothic cathedrals and charming guild houses. ",
       
     },
     {
@@ -66,14 +66,14 @@ const CitiesInfo =[
       "image":"bogota.jpg",
       "name": "Bogota",
       "country":"Colombia",
-      "description":"Bogotá is the extensive high altitude capital of Colombia. La Candelaria, its cobblestoned center, boasts colonial sites like the neoclassical Teatro Colón and the 17th-century Iglesia de San Francisco. It is also home to popular museums, including the Museo Botero, which exhibits art by Fernando Botero, and the Museo del Oro, with pre-Columbian gold pieces.",      
+      "description":"Bogotá is the extensive high altitude capital of Colombia. La Candelaria, its cobblestoned center, boasts colonial sites like the neoclassical Teatro Colón and the 17th-century Iglesia de San Francisco. It is also home to popular museums, including the Museo Botero.",      
     },
     {
       "id": 10,
       "image":"santiago.jpg",
       "name": "Santiago",
       "country":"Chile",
-      "description":"Santiago, the capital and largest city of Chile, is located in a valley surrounded by the snow-capped peaks of the Andes and the Chilean Coastal Range. The Plaza de Armas, the great nucleus of the old colonial center of the city, has 2 neoclassical monuments: the Palacio de la Real Audiencia from 1808, where the National Historical Museum is located. La Chascona is the house transformed into a museum of the poet Pablo Neruda.",
+      "description":"Santiago, the capital and largest city of Chile, is located in a valley surrounded by the snow-capped peaks of the Andes and the Chilean Coastal Range. The Plaza de Armas, the great nucleus of the old colonial center of the city, has 2 neoclassical monuments: the Palacio of the Real Audiencia, where the National Historical Museum is located. ",
     },
     {
       "id": 11,
@@ -88,34 +88,10 @@ const CitiesInfo =[
       "image":"valparaiso.jpg",
       "name": "Valparaiso",
       "country":"Chile",
-      "description":"Valparaíso is a port city on the coast of Chile. It is known for its steep cable cars and colorful houses on the hills. La Sebastiana, the extravagant former residence of Chilean poet Pablo Neruda, is now a museum with expansive views of the Pacific. During the 19th century, an influx of European immigrants left their mark on the city's architecture and cultural institutions, many of which congregate around Plaza Sotomayor in the city center.",
+      "description":"Valparaíso is a port city on the coast of Chile. It is known for its steep cable cars and colorful houses on the hills. La Sebastiana, the extravagant former residence of Chilean poet Pablo Neruda, is now a museum with expansive views of the Pacific.",
      
     }
-    ,
-    {
-      "id": 13,
-      "image":"morocco.jpg",
-      "name": "Rabat",
-      "country":"Morocco",
-      "description":"Rabat, the capital of Morocco, is located on the coast of the Bu Regreg River and the Atlantic Ocean. It is known for emblematic sites that show the Islamic and French colonial heritage, such as the Kasbah of the Udayas. This Berber-era royal fort is surrounded by French gardens that overlook the ocean. ",
-     
-    },
-    {
-      "id": 14,
-      "image":"moscow.jpg",
-      "name": "Moscow",
-      "country":"Russia",
-      "description":"Moscow is located on the Moskva River in western Russia and is the nation's cosmopolitan capital. In its historic center, there is the Kremlin, a complex that houses the president and treasures of the tsars in the Armory. ",
     
-    },
-    {
-      "id": 15,
-      "image":"tokyo.jpg",
-      "name": "Tokyo",
-      "country":"Japan",
-      "description":"Tokyo, Japan's bustling capital, mixes the ultra-modern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding forests. ",
-     
-    }
   
   ]
 
