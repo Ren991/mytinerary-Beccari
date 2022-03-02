@@ -2,19 +2,15 @@ import React from "react";
 import "../styles/styles.css";
 import { useState } from "react";
 import { Fade } from "react-bootstrap";
-import {Link as LinkRouter} from 'react-router-dom'
-
+import { Link as LinkRouter } from "react-router-dom";
 
 function Example(props) {
-  
   const [open, setOpen] = useState(false);
   const cities = props.cities;
-  console.log(props);
 
   return (
     <>
-    hola
-     {/*  {cities.length > 0 ? (
+      {cities.length > 0 ? (
         cities?.map((city, index) => (
           <div className="cityCard" key={index}>
             <img
@@ -25,14 +21,13 @@ function Example(props) {
 
             <div className="cardContainer">
               <LinkRouter to={`/citiesDetails/${city._id}`}>
-              <h2
-                
-                onMouseOver={() => setOpen(!open)}
-                aria-controls="description-city"
-                aria-expanded={open}
-              >
-                {city.name}
-              </h2>
+                <h2
+                  onMouseOver={() => setOpen(!open)}
+                  aria-controls="description-city"
+                  aria-expanded={open}
+                >
+                  {city.name}
+                </h2>
               </LinkRouter>
               <h6>{city.country}</h6>
               <Fade in={!open}>
@@ -44,8 +39,8 @@ function Example(props) {
           </div>
         ))
       ) : (
-        <h1 className="noResults">No results found </h1>
-      )} */}
+        <h1 className="noResults">No results founded </h1>
+      )}
     </>
   );
 }

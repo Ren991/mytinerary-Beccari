@@ -44,10 +44,9 @@
   align-items: center;
   background-color: rgb(84, 92, 209);
 }
-.inputCitie{
+.inputCitie {
   margin-bottom: 1.5rem;
 }
-
 
 /*Footer*/
 
@@ -60,19 +59,18 @@ a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 1.3rem;
- 
 }
 /*CiTies*/
 
-.totalCards{
-    
-    display: flex;
-    flex-direction: column;
-
+.totalCards {
+  display: flex;
+  flex-direction: column;
 }
-
+.citiesTitle {
+  color: white;
+  margin-bottom: 1.5rem;
+}
 .citiesContainer {
-    
   height: max-content;
 }
 
@@ -83,12 +81,12 @@ a {
   margin-right: auto;
   border-radius: 0.8rem;
   object-fit: cover;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.cityCard{
-    height:65vh;
-    
-    
+.cityCard {
+  height: 65vh;
 }
 .cardContainer {
   position: relative;
@@ -96,22 +94,23 @@ a {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
- color: white;
+  color: white;
   font-size: 1.2rem;
 }
-.cityDescription{
-width: 80%;
-margin-left: auto;
-margin-right: auto;
-color: rgb(255, 255, 255);
-background-color: transparent;
-text-shadow: 1px 1px 1px rgb(0, 0, 0);
+.cityDescription {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
 }
-.noResults{
+.noResults {
   height: 40rem;
+  color: white;
 }
 /*CITIES DETAILS*/
 
-.detailsPage{
-  height:40rem;
+.detailsPage {
+  height: 40rem;
 }
