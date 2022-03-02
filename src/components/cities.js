@@ -12,10 +12,10 @@ const Cities = () => {
 
   const api = () => {
     axios
-      .get("http://localhost:4000/api/allcities")
+      .get("http://localhost:4000/api/allcities")//lamo la api
       .then((response) => {
-        setCities(response.data.response.cities);
-        setCitiesFiltered(response.data.response.cities);
+        setCities(response.data.response.cities);//seteo las cities
+        setCitiesFiltered(response.data.response.cities);//
       })
       .catch((error) => console.log(error));
     console.log(cities);
@@ -28,14 +28,14 @@ const Cities = () => {
   function searchInput(event) {
     let value = event.target.value;
 
-    let busqueda = cities.filter((city) => {
-      if (city.name.toLowerCase().startsWith(value.toLowerCase().trim())) {
+    let search = cities.filter((city) => {
+      if (city.name.toLowerCase().startsWith(value.toLowerCase().trim())) { //aplico el filtro
         return city;
       }
     });
 
-    setCitiesFiltered(busqueda);
-    console.log(busqueda);
+    setCitiesFiltered(search);// seteo cities filtered y le paso como parametro search
+    console.log(search);
   }
 
   return (
@@ -45,10 +45,10 @@ const Cities = () => {
         <input
           className="inputCitie"
           placeholder="type"
-          onChange={(e) => searchInput(e)}
+          onChange={(e) => searchInput(e)}//le aplico la funcion searchInput al input
         ></input>
 
-        <div className="totalCards">
+        <div className="totalCards">  
           <Example cities={citiesFiltered} />
         </div>
       </div>
