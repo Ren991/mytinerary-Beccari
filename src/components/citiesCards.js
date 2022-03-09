@@ -4,15 +4,15 @@ import { useState } from "react";
 import { Fade } from "react-bootstrap";
 import { Link as LinkRouter } from "react-router-dom";
 
-function Example(props) {
+function Example({city}) {//le paso como props las ciudades filtradas desde cities
   const [open, setOpen] = useState(false);
-  const cities = props.cities;
-
+   //creo una variable con las props
+  console.log(city)
   return (
     <>
-      {cities.length > 0 ? (
-        cities?.map((city, index) => (
-          <div className="cityCard" key={index}>
+    
+      
+          <div className="cityCard" >
             <img
               className="imgCard"
               src={process.env.PUBLIC_URL + `/imagenes/${city.image}`}
@@ -36,11 +36,8 @@ function Example(props) {
                 </div>
               </Fade>
             </div>
-          </div>
-        ))
-      ) : (
-        <h1 className="noResults">No results founded </h1>
-      )}
+          </div> 
+       
     </>
   );
 }

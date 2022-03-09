@@ -5,18 +5,19 @@ const citiesControllers = {
     let error = null;
     try {
       cities = await Ciudades.find();
+      console.log(cities)
     } catch (err) {
       error = err;
       console.log(error);
     }
     res.json({
-      response: error ? "ERROR" : { cities },
+      response: error ? "ERROR" :  cities ,
       success: error ? false : true,
       error: error,
     });
   },
   uploadCitie: async (req, res) => {
-    console.log(req.body);
+
     const { id, image, name, country, description } = req.body;
     new Ciudades({ id, image, name, country, description })
       .save()

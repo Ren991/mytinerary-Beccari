@@ -1,58 +1,69 @@
 import React, { useEffect, useState } from "react";
 import "../styles/styles.css";
 import Example from "./citiesCards";
-import axios from "axios";
 
-const Cities = () => {
+import { connect } from "react-redux";
+import citiesActions from "../redux/actions/citiesActions";
+const Cities = (props) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 
   const [cities, setCities] = useState([]);
 
-  const [citiesFiltered, setCitiesFiltered] = useState([]);
-
-  const api = () => {
-    axios
-      .get("http://localhost:4000/api/allcities")//lamo la api
-      .then((response) => {
-        setCities(response.data.response.cities);//seteo las cities
-        setCitiesFiltered(response.data.response.cities);//
-      })
-      .catch((error) => console.log(error));
-    console.log(cities);
-  };
-
   useEffect(() => {
-    api();
-  }, []);
-
-  function searchInput(event) {
-    let value = event.target.value;
-
-    let search = cities.filter((city) => {
-      if (city.name.toLowerCase().startsWith(value.toLowerCase().trim())) { //aplico el filtro
-        return city;
-      }
-    });
-
-    setCitiesFiltered(search);// seteo cities filtered y le paso como parametro search
-    console.log(search);
+    if (props.allCities.length === 0) {
+      props.getCities();
+    }
+    setCities(props.allCities);//Cargo las ciudades a cities
+  }, [props.allCities]);
+  console.log(props);
+  
+  function returnCities() {//creo funcion para retornar ciudades
+    if (cities === 0) { 
+      return (
+        <>
+          <h2>Loading...</h2>
+        </>
+      );
+    }
+    if (props.oneCity.length === 0) { //Si no encuentra la ciudad que ingresamos en el input
+      return (
+        <>
+          <p>Oops! We didn't found this place. Try other!</p>
+        </>
+      );
+    } else {
+      return (
+        <>
+          {props.oneCity.map((city) => (
+            <Example key={city.name} city={city} /> //Componente que renderiza el estilos de las cards
+          ))}
+        </>
+      );
+    }
   }
 
   return (
     <>
-      <div className="citiesContainer">
-        <h1 className="citiesTitle">what will be your next destination?</h1>
-        <input
-          className="inputCitie"
-          placeholder="type"
-          onChange={(e) => searchInput(e)}//le aplico la funcion searchInput al input
-        ></input>
-
-        <div className="totalCards">  
-          <Example cities={citiesFiltered} />
-        </div>
-      </div>
+      <input
+        type="text"
+        placeholder="Type here for search"
+        onChange={(e) => props.filterCities(e.target.value.trim())}
+      ></input>
+      {returnCities()}
     </>
   );
 };
-export default Cities;
+
+const mapStateToProps = (state) => {
+  return {
+    allCities: state.citiesR.cities,
+    oneCity: state.citiesR.citiesFiltered,
+  };
+};
+
+const mapDispatchToProps = {
+  getCities: citiesActions.getCities,
+  filterCities: citiesActions.filterCities,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cities);

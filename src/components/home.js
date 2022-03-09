@@ -9,7 +9,7 @@ import {Link as LinkRouter} from 'react-router-dom'
 
 
 
-const Home = () => {
+const Home = (props) => {
   window.scrollTo({top: 0, behavior: "smooth"})
     return (
       <div>

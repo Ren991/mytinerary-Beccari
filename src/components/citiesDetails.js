@@ -1,54 +1,59 @@
 import "../styles/styles.css";
-import axios from "axios";
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link as LinkRouter } from "react-router-dom";
+import Itineraries from "./citiesItineraries";
+import { connect } from "react-redux";
+import itinerariesActions from "../redux/actions/itinerariesActions";
+import citiesActions from "../redux/actions/citiesActions";
 
-const CitiesDetails = () => {
-  const [details, setDetails] = useState([]);
-  const [city, setCity] = useState([]);
-
-  const { id } = useParams(); // creo una constante que toma el valor del id donde estoy
-
-  const api = () => {
-    axios
-      .get("http://localhost:4000/api/allcities")// vuelvo a llamar a la api
-      .then((response) => {
-        setDetails(response.data.response.cities);//seteo la variable de estado details
-      })
-      .catch((error) => console.log(error));
-  };
+const CitiesDetails = (props) => {
+  const [details, setDetails] = useState([]); //setDetails para llamar a la api //para filtrar el id del pais
+  const { id } = useParams();
 
   useEffect(() => {
-    api();
-
-    setCity(details.filter((cities) => cities._id === id));//seteo la variable de estado city y la igualo con el id
-  }, [details]); // array de dependencia , empieza vacio. Cada vez que cambie se va a ejecutar el useEffect
-
+    if (props.cities.length === 0){ //esto soluciona el problema de async al apretar f5
+      window.location.replace("/cities") // redirecciona a cities
+    } //PREGUNTAR POR QUE NO PUEDO VER TODAS LAS PROPS Y USAR PROPS.HISTORY.PUSH("/")
+    setDetails(
+      props.cities.find((cities) => cities._id === id)// 
+    );
+    props.getItineraries(id)
+  }, [props.cities]); 
+  console.log(props.itineraries)
+  console.log(details); 
   return (
     <div className="detailsPage">
-      <h2>Page under construction</h2>
-      <LinkRouter to="/cities">
+      <div>
+        <h2>{details.name}</h2>;
+        <img
+          className="imgCard"
+          src={process.env.PUBLIC_URL + `/imagenes/${details.image}`}
+          width="90%"
+        />
+      </div>
+      {props.itineraries.length !== 0 && props.itineraries.map(itinerary=>
+      <><Itineraries itinerary={itinerary}/>
+     </>)}  
+     <LinkRouter to="/cities">
         <button className="buttonClick">Go to cities</button>
       </LinkRouter>
 
-      <>
-        {city.length > 0      // si el array es catcheable se puede mapear , es decir si el array es mayor a 0.
-          ? city.map((hola,index) => {
-              return (
-                <div  key={index}>
-                  <h2>{hola.name}</h2>
-                  <img
-                    className="imgCard"
-                    src={process.env.PUBLIC_URL + `/imagenes/${hola.image}`}
-                    width="90%"
-                  />
-                </div>
-              );
-            })
-          : null}
-      </>
     </div>
+  
   );
+  
 };
-export default CitiesDetails;
+
+const mapStateToProps = (state) => {
+  return {
+    cities: state.citiesR.cities,
+    itineraries: state.itinerarieR.itineraries,
+  };
+};
+const mapDispatchToProps = {
+  getItineraries: itinerariesActions.getItineraries,
+  getCities: citiesActions.getCities,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(CitiesDetails);
