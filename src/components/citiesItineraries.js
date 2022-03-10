@@ -2,17 +2,16 @@ import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "../styles/styles.css";
 import clock from "./assets/clock.png";
-import money from "./assets/money.png";
-import userimg from "./assets/userimg.png";
+
 import like from "./assets/like.png"
 
 
 
 const Itineraries = ({itinerary}) => {
   return (
-    <Accordion className="detailsAccordion" defaultActiveKey="0" flush>
+    <Accordion className="detailsAccordion" defaultActiveKey="1" >
       
-            <h2>{itinerary.title}</h2>
+            <h2 className="itineraryTitle">{itinerary.title}</h2>
             <div className="itineraryContainer"> 
             <div className="durationItinerary">
               <h4>
@@ -22,14 +21,14 @@ const Itineraries = ({itinerary}) => {
             </div>
             <div className="priceItinerary">
               <h4>
-                Price:
-                <img width="30rem" src={money} />
+              <p>Price:{"💵".repeat(parseInt(itinerary.price))}</p>
+                
               </h4>
             </div>
-            <div className="userNameImg" src={itinerary.userImg}>
+            <div className="userNameImg">
               <h4>
                 {itinerary.userName}
-                <img width="50rem" src={userimg} />
+                <img width="50rem" src={itinerary.userImg} className="userImg"/>
               </h4>
             </div>
             <div className="likesItinerary">
@@ -39,11 +38,11 @@ const Itineraries = ({itinerary}) => {
                 {itinerary.likes}
               </h4>
             </div>
-            <div className="likesItinerary">
-              {itinerary.hashtags.map(hastag=><h4>
+            <div>
+              <h5 className="hashtag">
                 
-                {hastag}
-              </h4>)}
+                {itinerary.hashtags}
+              </h5>
             </div>
             
           </div>
@@ -53,7 +52,7 @@ const Itineraries = ({itinerary}) => {
           
         </Accordion.Header>
         <Accordion.Body>
-         Not Activities available yet.
+        <h5>Not activities available yet</h5>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

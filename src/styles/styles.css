@@ -44,8 +44,12 @@
   align-items: center;
   background-color: rgb(84, 92, 209);
 }
-.inputCitie {
-  margin-bottom: 1.5rem;
+.inputSearch {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 50%;
+  height: 3rem;
+
 }
 
 /*Footer*/
@@ -61,6 +65,9 @@ a {
   font-size: 1.3rem;
 }
 /*CiTies*/
+.noCities{
+  height: 20rem;
+}
 
 .totalCards {
   display: flex;
@@ -114,6 +121,10 @@ a {
 .detailsPage {
   height: max-content;
 }
+.detailsName{
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
 /*CITIES ITINERARIES*/
 
 .detailsAccordion{
@@ -135,4 +146,19 @@ a {
   justify-content:space-around;
   margin-bottom:1rem;
   
+}
+.itineraryTitle{
+  margin-top:1rem;
+  margin-bottom:2.5rem;
+  text-decoration: underline;
+}
+.noItineraries{
+  margin-top: 2.5rem;
+}
+.buttonCities{
+  margin-bottom:2rem;
+  margin-top: 1.5rem;
+}
+.userImg{
+  border-radius: 1.5rem;
 }

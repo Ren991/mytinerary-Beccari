@@ -6,7 +6,7 @@ const cityActions= {
         return async (dispatch, getState) =>{
             const response = await fetch("http://localhost:4000/api/allcities")
             const data= await response.json()
-            console.log(data.response)
+            //console.log(data.response)
             dispatch({type:"GET_CITIES", payload: data.response})
             //Type :nombre de la accion , Payload:la carga que le mandamos al tipo de accion
         }

@@ -7,7 +7,7 @@ import { Link as LinkRouter } from "react-router-dom";
 function Example({city}) {//le paso como props las ciudades filtradas desde cities
   const [open, setOpen] = useState(false);
    //creo una variable con las props
-  console.log(city)
+  
   return (
     <>
     
