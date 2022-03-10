@@ -76,6 +76,7 @@ const itineraryController = {
         } catch (error) {
             console.log(error);
         }
+    
     } */
 };
 module.exports = itineraryController;
