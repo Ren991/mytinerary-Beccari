@@ -36,6 +36,26 @@
 .responsiveButton {
   color: rgb(90, 103, 224);
 }
+.buttonProfile{
+  display: flex;
+  flex-direction: column;
+  width: 50% !important;
+  
+  
+}
+.btnIn{
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem;
+}
+.noUser{
+  width: 100%;
+  
+}
+.text-center{
+  color: white;
+}
 /*Cities*/
 .citiesContainer {
   height: 20rem;
@@ -161,4 +181,93 @@ a {
 }
 .userImg{
   border-radius: 1.5rem;
+}
+/*SignUp*/
+
+.signUpForm{
+  width:60%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:1.5rem;
+}
+.input-group{
+  margin-top:1.5rem;
+  margin-bottom:1.5rem;
+}
+
+.buttonUser{
+  color:black !important;
+}
+/*SIGN IN*/
+.signInForm{
+  
+  border-radius: 0.5rem;
+  width: 70%;
+  height:30rem;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:rgb(84, 84, 216);
+  color:white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.dontAccount{
+  color: black;
+}
+.formIn{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.signInh3{
+  margin-top: 2rem;
+}
+.photoUser{
+  width:50px;
+  border-radius: 360px;
+  height: 50px;
+  object-fit: cover;
+}
+/*SIGN OUT*/
+.formSignUp{
+ 
+  border: 2px solid rgb(84, 84, 216);
+  border-radius: 0.5rem;
+  width: 70%;
+  height:40rem;
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:rgb(84, 84, 216);
+  color:white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+select{
+  width:50%;
+  height:2.5rem;
+  margin-top: 2rem;
+  border-radius:0.5rem;
+}
+.form-group{
+  width:60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.name{
+  margin-top:2.5rem;
+}
+.buttonsocial{
+  color: white;
+  background-color:#6e2375;
+  height:2.5rem;
+  margin-top: 1rem;
+  border-radius:0.5rem;
 }

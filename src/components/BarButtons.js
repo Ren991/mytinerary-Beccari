@@ -13,10 +13,17 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link as LinkRouter } from "react-router-dom";
 import "../styles/styles.css";
+import userActions from "../redux/actions/userActions";
+import { connect } from "react-redux";
+
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const BarButtons = () => {
+const BarButtons = (props) => {
+  console.log(props);
+  function SignOut() {
+    props.signOutUser(props.user.email);
+  }
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -112,13 +119,32 @@ const BarButtons = () => {
             </LinkRouter>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
+         
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                
+            {props.user ? (
+        <>
+        <img className="photoUser" alt="Photo User" src={props.user.photo}/> 
+       </>  
+      ) : (
+       
+        
+        <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> 
+       
+      
+      
+      )}
+                
+                
+                
+                
+               
               </IconButton>
             </Tooltip>
+            
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{ mt: "50px" , }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -132,17 +158,72 @@ const BarButtons = () => {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              className="buttonProfile"
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+          
+          
+             {props.user ? (
+        <div>
+           <h3 className="welcome">
+            Welcome {props.user.name} 
+          </h3> *
+          <div
+            style={{ display: "column", justifyContent: "center", width: "100%" }}
+          >
+            
+             
+             <LinkRouter to="/">
+            <button
+              onClick={SignOut}
+              className="btn btn-primary btn-block"
+              style={{ maxWidth: 400 }}
+            >
+              {" "}
+              SignOut{" "}
+            </button>
+            </LinkRouter>
+          
+          
+          </div>
+        </div>
+      ) : (
+        <div >
+        <h2 className="noUser">No user connected</h2>  
+      
+       <LinkRouter to="/signIn">
+        <button  className="btnIn btn-primary  btn-block"
+              style={{ maxWidth: 100 , marginBottom: 20}}
+            >Sign In</button>
+      </LinkRouter>
+      
+      <LinkRouter to="/signUp">
+        <button  className="btnIn btn-primary btn-block"
+              style={{ maxWidth: 100 }}>Sign Up</button>
+      </LinkRouter>
+     
+      </div> 
+      
+      
+      )}
+       
+           
             </Menu>
+         
+           
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
-export default BarButtons;
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.userR.user,
+  };
+};
+const mapDispatchToProps = {
+  signOutUser: userActions.signOutUser,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BarButtons);
