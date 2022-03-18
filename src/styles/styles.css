@@ -56,6 +56,9 @@
 .text-center{
   color: white;
 }
+.freeCount{
+  margin-top: 2rem;
+}
 /*Cities*/
 .citiesContainer {
   height: 20rem;

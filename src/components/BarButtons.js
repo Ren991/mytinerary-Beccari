@@ -20,7 +20,7 @@ import { connect } from "react-redux";
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const BarButtons = (props) => {
-  console.log(props);
+  //console.log(props);
   function SignOut() {
     props.signOutUser(props.user.email);
   }

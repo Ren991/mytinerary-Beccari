@@ -38,18 +38,18 @@ function SignUp(props) {
     };
     props.signUpUser(userData); //A la funcion signUpUser le paso todos los datos del objeto userData
   };
-  console.log(props);
+  //console.log(props);
 
   return (
     <div className="formSignUp">
-      <div class="styled-select">
+      <div className="styled-select">
         <Snack />
        
       </div>
       {selectPaises !== "unselected" ? (
         <>
-          <h2 className="card-title mt-3 text-center">User Account</h2>
-          <h3 className="text-center">Get started with your free account</h3>
+       
+          <h2 className="freeCount text-center">Get started with your free account</h2>
 
          
           <FacebookSignUp pais={selectPaises} />
@@ -114,7 +114,7 @@ function SignUp(props) {
         <>
         <h1>Select a country to start registration</h1>
         <select
-        class="form-group form-select-sm"
+        className="form-group form-select-sm"
         aria-label=".form-select-sm example"
         onChange={selected}
       >
@@ -122,6 +122,7 @@ function SignUp(props) {
           <option key={index}>{pais}</option>
         ))}
       </select>
+       
       </>
       )}
     </div>

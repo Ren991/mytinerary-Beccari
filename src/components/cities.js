@@ -3,6 +3,8 @@ import "../styles/styles.css";
 import Example from "./citiesCards";
 import { connect } from "react-redux";
 import citiesActions from "../redux/actions/citiesActions";
+
+
 const Cities = (props) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 

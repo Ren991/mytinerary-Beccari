@@ -175,15 +175,14 @@ const usersControllers = {
             };
             await usuarioExiste.save();
 
-            const token = jwt.sign({...userData}, process.env.SECRET_KEY, {
+            const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, {
               expiresIn: 60 * 60 * 24,
             });
 
             res.json({
-                 
               success: true,
               from: from,
-              response: { token,userData },
+              response: { token, userData },
               message: "Bienvenido nuevamente " + userData.name,
             });
             console.log(res);
@@ -216,14 +215,13 @@ const usersControllers = {
                 photo: usuarioExiste.photo,
                 from: usuarioExiste.from,
               };
-              const token = jwt.sign({...userData}, process.env.SECRET_KEY, {
+              const token = jwt.sign({ ...userData }, process.env.SECRET_KEY, {
                 expiresIn: 60 * 60 * 24,
               });
               res.json({
-                  
                 success: true,
                 from: from,
-                response: { token,userData },
+                response: { token, userData },
                 message: "Bienvenido nuevamente " + userData.name,
               });
             } else {
@@ -257,18 +255,28 @@ const usersControllers = {
     await user.save();
     res.json(console.log("sesion cerrada " + email));
   },
-  verificarToken:(req, res) => {
-    console.log(req.user)
-    if(!req.err){
-    res.json({success:true,
-              response:{id:req.user.id, name:req.user.name,lastName:req.user.lastName,email:req.user.email,country:req.user.country,photo:req.user.photo, from:"token"},
-              message:"Bienvenido nuevamente "+req.user.name}) 
-    }else{
-        res.json({success:false,
-        message:"Por favor realiza nuevamente signIn"}) 
+  verificarToken: (req, res) => {
+    console.log(req.user);
+    if (!req.err) {
+      res.json({
+        success: true,
+        response: {
+          id: req.user.id,
+          name: req.user.name,
+          lastName: req.user.lastName,
+          email: req.user.email,
+          country: req.user.country,
+          photo: req.user.photo,
+          from: "token",
+        },
+        message: "Bienvenido nuevamente " + req.user.name,
+      });
+    } else {
+      res.json({
+        success: false,
+        message: "Por favor realiza nuevamente signIn",
+      });
     }
-}
-
-
+  },
 };
 module.exports = usersControllers;

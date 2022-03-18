@@ -6,13 +6,15 @@ import logo from './assets/logo.png'
 import bridge from './assets/bridge.png'
 import city from './assets/city.png'
 import {Link as LinkRouter} from 'react-router-dom'
-
+import Snack from '../components/Sign/snackbar';
 
 
 const Home = (props) => {
   window.scrollTo({top: 0, behavior: "smooth"})
     return (
+    
       <div>
+          <Snack/>
       <img className="imgHero" width="100%"  src={airplane}/> 
       <div className="logoDiv">
       <img className="logo" width="20%"  src={logo}/>

@@ -7,16 +7,16 @@ import userActions from '../../redux/actions/userActions';
 function FacebookSignUp(props) {
 
   const responseFacebook = async (res) => {
-    console.log(res)
-    console.log(res.name)
+    //console.log(res)
+    //console.log(res.name)
       const fullNameSeparado = res.name.split(" ")
-      console.log(fullNameSeparado)
+      //console.log(fullNameSeparado)
 
       let nombre = fullNameSeparado[0]
       let apellido = fullNameSeparado[1]
       //console.log(nombre)
       //console.log(apellido)
-console.log(props.selectPaises);
+//console.log(props.selectPaises);
     const userData = {
       name:fullNameSeparado[0],
       lastName:fullNameSeparado[1],
@@ -28,7 +28,7 @@ console.log(props.selectPaises);
       
       country:props.pais,
     }
-    console.log(res);
+    //console.log(res);
     await props.signUpUser(userData)
   }
 

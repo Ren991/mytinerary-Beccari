@@ -21,14 +21,14 @@ const userActions = {
   },
 
   signInUser: (logedUser) => {
-    console.log(logedUser);
+    //console.log(logedUser);
     return async (dispatch, getState) => {
       const user = await axios.post("http://localhost:4000/api/auth/signin", {
         logedUser,
       });
-      console.log(user);
+      //console.log(user);
       if (user.data.success) {
-        console.log(user.data.success);
+        //console.log(user.data.success);
         localStorage.setItem('token',user.data.response.token)
         dispatch({ type: "user", payload: user.data.response.userData });
       }
@@ -45,7 +45,7 @@ const userActions = {
 
   signOutUser: (closeuser) => {
     return async (dispatch, getState) => {
-      console.log("se activo el signOut");
+      //console.log("se activo el signOut");
       const user = await axios.post("http://localhost:4000/api/auth/signout", {
         closeuser,
       });
@@ -57,13 +57,13 @@ const userActions = {
   VerificarToken: (token) => {
 
     return async (dispatch, getState) => {
-        console.log(token)
+        //console.log(token)
         const user = await axios.get('http://localhost:4000/api/auth/signInToken', {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         })
-        console.log(user)
+        //console.log(user)
         
         if (user.data.success) {
             dispatch({ type: 'user', payload: user.data.response });

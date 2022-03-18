@@ -11,12 +11,12 @@ import thunk from 'redux-thunk'
 const reduxStore= createStore(mainReducer,applyMiddleware(thunk))
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <Provider store={reduxStore}>
     <App />
-    </Provider>
+    </Provider>,
    
-  </React.StrictMode>,
+  
   document.getElementById('root')
 );
 
