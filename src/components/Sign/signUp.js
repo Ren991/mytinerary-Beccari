@@ -14,6 +14,9 @@ function SignUp(props) {
     "Colombia",
     "Chile",
     "Uruguay",
+    "Venezuela",
+    "Paraguay",
+    "Ecuador",
   ];
 
   const [selectPaises, setSelectPaises] = useState("unselected");
@@ -33,7 +36,7 @@ function SignUp(props) {
       email: event.target[2].value,
       password: event.target[3].value,
       country: selectPaises,
-      photo: event.target[4].value,
+      photo: event.target[5].value,
       from: "form-Signup",
     };
     props.signUpUser(userData); //A la funcion signUpUser le paso todos los datos del objeto userData

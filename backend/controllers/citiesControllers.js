@@ -36,8 +36,9 @@ const citiesControllers = {
     await Ciudades.findOneAndUpdate({ _id: id }, city)
     .then((respuesta) =>res.json({respuesta}) )
   },
-  getCitieById:  async (req, res) => {
+  getCitieById: async (req, res) => {
     const id = req.params.id;
+    console.log(id)
     await Ciudades.findOne({ _id: id })
     .then((respuesta) =>res.json({respuesta}) )
   },

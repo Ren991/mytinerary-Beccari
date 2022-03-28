@@ -166,7 +166,7 @@ const BarButtons = (props) => {
         <div>
            <h3 className="welcome">
             Welcome {props.user.name} 
-          </h3> *
+          </h3> 
           <div
             style={{ display: "column", justifyContent: "center", width: "100%" }}
           >

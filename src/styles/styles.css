@@ -12,19 +12,22 @@
   margin-left: auto;
   margin-bottom: 2rem;
 }
-
+.likeDislike{
+  display:flex;
+}
+.buttonLikes{
+  cursor: pointer;
+}
 .imgText {
   width: 100%;
 
-  background-color: rgb(90, 103, 224);
+  background-color: rgb(64, 100, 179);
   border: 1px solid rgb(0, 0, 0);
   border-radius: 0.8rem;
   margin-top: 1rem;
 }
 
-.imgText:hover {
-  background-color: #6e2375;
-}
+
 /*Navbar*/
 .link {
   color: white !important;
@@ -274,3 +277,29 @@ select{
   margin-top: 1rem;
   border-radius:0.5rem;
 }
+
+.imgActivity{
+  margin-top:6rem;
+}
+
+.imgActivities{
+  border-radius: 0.8rem;
+  height: 14rem;
+  width:90%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+.activitiesCards{
+  height: 20rem;
+  width:95%;
+margin-bottom: 3rem;
+margin-left: auto;
+margin-right: auto;
+border: 2px solid black;
+display: flex;
+flex-wrap: wrap;
+}
+/* .buttonLike{
+  background-color: white;
+  
+} */

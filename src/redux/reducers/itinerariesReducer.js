@@ -9,6 +9,8 @@ const initialState = {
           ...state,
           itineraries: action.payload
         }
+      
+
       default:
       return state
     }

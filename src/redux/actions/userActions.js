@@ -21,12 +21,14 @@ const userActions = {
   },
 
   signInUser: (logedUser) => {
-    //console.log(logedUser);
+    console.log(logedUser);
+    
     return async (dispatch, getState) => {
       const user = await axios.post("http://localhost:4000/api/auth/signin", {
-        logedUser,
-      });
-      //console.log(user);
+      logedUser,
+      })
+      ;
+      console.log(user);
       if (user.data.success) {
         //console.log(user.data.success);
         localStorage.setItem('token',user.data.response.token)

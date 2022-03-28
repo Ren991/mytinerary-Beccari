@@ -12,8 +12,9 @@ const Cities = (props) => {
 
   useEffect(() => {
     if (props.allCities.length === 0) {
-      props.getCities();
+      props.getCities(); 
     }
+    
     setCities(props.allCities); //Cargo las ciudades a cities
   }, [props.allCities]);
   //console.log(props);
@@ -27,7 +28,8 @@ const Cities = (props) => {
         </>
       );
     }
-    if (props.oneCity.length === 0) {
+    console.log(props.oneCity)
+    if (props.oneCity?.length === 0) {
       //Si no encuentra la ciudad que ingresamos en el input
       return (
         <>
