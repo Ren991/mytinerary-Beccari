@@ -9,8 +9,11 @@ import itinerariesActions from "../redux/actions/itinerariesActions";
 import commentsActions from '../redux/actions/commentsActions';
 import citiesActions from "../redux/actions/citiesActions";
 import activitiesActions from "../redux/actions/activitiesActions";
+import Comments from './comments';
+import Comment from './comment';
 import Activities from "./activities";
 import Swal from 'sweetalert2'
+
 import "../styles/styles.css";
 import { useParams } from 'react-router-dom';
 
@@ -55,19 +58,35 @@ const Itineraries = (props) => {
     setReload(!reload)
   }
 
-  async function modifyComments(event) {
+  async function modifyComments(commentID) {
     const commentData = {
-      commentID: event.target.id,
+    /*   commentID: event.target.id, */
       comment: inputText,
     }
     setModifi(!modifi)
-    await props.modifiComment(commentData)
+    await props.modifiComment(commentID,commentData)
     props.getItineraries(id)
+    props.getOneCity(id)
+
 
   }
-  async function deleteComments(event) {
-    await props.deleteComment(event.target.id)
-    props.getItineraries(id)
+  async function deleteComments(commentID) {
+    const commentData = {
+      commentID: commentID,
+    }
+    const awaitDelete = await props.deleteComment(props.itineraryId, commentData)
+    console.log(commentData)
+    console.log(awaitDelete)
+    
+
+    if(awaitDelete.success) {
+      props.findOneCity(id)
+      props.itinerariesPerCity(id)
+      console.log("eliminadoOoOOo")
+      // props.findOneCity(id)
+    }
+   /*  await props.deleteComment(event.target.id)
+    props.getItineraries(id) */
   }
   async function likesOrDislikes() {
     await props.likeDislike(props.id)
@@ -122,11 +141,11 @@ console.log(props.itinerary.comments)
                 
 
                 {props.user ?//USUARIO CONECTADO ¿?
-              (<h1   onClick={likesOrDislikes}>{props.itinerary?.likes.includes(props.user.id) ?//Creamos un boton y le pasamos la funcion likesDislikes
+              (<button   onClick={likesOrDislikes}>{props.itinerary?.likes.includes(props.user.id) ?//Creamos un boton y le pasamos la funcion likesDislikes
                 <span style={{ color: "red", fontSize:30 , backgroundColor:"white",border:"white"}} class="material-icons">favorite</span> ://Si el id del usuario aparece en el array de likes aparece rojo 
-                <span className="buttonLikes" style={{  fontSize:30 }}class="material-icons">favorite_border</span>}</h1>)
+                <span className="buttonLikes" style={{  fontSize:30 }}class="material-icons">favorite_border</span>}</button>)
 
-              : (<h1 className="buttonLikes"   onClick={noUser} style={{  fontSize:30, backgroundColor:"white", border:"white" }} class="material-icons">favorite_border</h1>)
+              : (<button className="buttonLikes"   onClick={noUser} style={{  fontSize:30, backgroundColor:"white", border:"white" }} class="material-icons">favorite_border</button>)
               }
 
           <h3 style={{  color:"black ",fontSize:30 }}>{props.itinerary?.likes.length}</h3>
@@ -151,7 +170,13 @@ console.log(props.itinerary.comments)
            
             <Activities img={activity.activitieImg} name={activity.activitieTitle} key={activity._id}  />
           ))}
-           <div class="accordion" id={props.itinerary?.title}>
+           {props.itinerary.comments.map((comment) => (
+                <Comments  itineraryId={props.id} commentId={comment._id} comment={comment} key={comment._id}  />
+                  ))
+                          
+                }
+                <Comment itineraryId={props.id}/>
+          {/*  <div class="accordion" id={props.itinerary?.title}>
           <div class="accordion-item">
             <h2 class="accordion-header " id={"heading" + props.itinerary?.title}>
               <button class="accordion-button collapsed acordion " type="button" data-bs-toggle="collapse" data-bs-target={"#" + props.itinerary?.title.replace(/ /g, "").slice(0, 5)} aria-expanded="false" aria-controls={props.itinerary?.title.replace(/ /g, "").slice(0, 5)}>
@@ -211,11 +236,11 @@ console.log(props.itinerary.comments)
                     </div>
                   </div> :
                   <h1>Leave us your comment by doing Sign in</h1>
-                }
+                } 
               </div>
             </div>
-          </div>
-        </div>
+              </div>
+        </div>*/}
       </div>
        
        
@@ -233,9 +258,9 @@ const mapDispatchToProps = {
   getActivities: activitiesActions.getActivities,
   getItineraries: itinerariesActions.getItineraries,
   addComment: commentsActions.addComment,
-  modifiComment: commentsActions.modifiComment,
+  //modifiComment: commentsActions.modifiComment,
   deleteComment: commentsActions.deleteComment,
-  
+  getOneCitie:citiesActions.getOneCitie,
   
 };
 const mapStateToProps = state => {

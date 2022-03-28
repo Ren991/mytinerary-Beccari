@@ -24,9 +24,9 @@ Router.route("/allcities/:id").delete(deleteCitie).put(modifiedCitie).get(getCit
 Router.route("/allItineraries").get(getAllItineraries).post(uploadItinerary);
 Router.route("/allItineraries/:id").get(getOneItinerary).delete(deleteItinerary).put(modifyItinerary)//.get(getItinerarieByIdCity)
 Router.route("/like/:id").put(passport.authenticate("jwt", {session: false}),likeDislike)
-Router.route('/allItineraries/comment')
+Router.route('/allItineraries/comment/:id')
 .post(passport.authenticate('jwt',{ session: false }),addComment)
-.post(passport.authenticate('jwt',{ session: false }),modifiComment)
+.put(passport.authenticate('jwt',{ session: false }),modifiComment)
 Router.route('/allItineraries/comment/:id')
 .delete(passport.authenticate('jwt',{ session: false }),deleteComment)
 //ACTIVITIES ROUTES
