@@ -6,7 +6,7 @@ const commentsControllers = {
     const user = req.user._id;
     const comment=req.body.comment
     const itinerary = req.params.id
-console.log(req.body)
+//console.log(req.body)
 //console.log(comment)
     try {
       const nuevoComment = await Itinerary.findOneAndUpdate(
@@ -42,7 +42,7 @@ console.log(req.body)
         { $set: { "comments.$.comment": req.body.comment } },
         { new: true }
       );
-      console.log(newComment);
+      //console.log(newComment);
       res.json({
         success: true,
         response: { newComment },
@@ -80,13 +80,15 @@ console.log(req.body)
     }
   }, */
   deleteComment: async (req, res) => {
+    console.log("Hugo")
+    
     try {
         const deleteComment = await Itinerary.findOneAndUpdate(
             {_id: req.params.id},
             {
                 $pull: {
                     comments: {
-                        _id: req.params.comment
+                        _id: req.body.commentId.commentId
                     }
                 }
             },

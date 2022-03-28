@@ -42,17 +42,22 @@ const Comments = (props) => {
       const commentData = {
         commentId: commentId,
       }
-      const awaitDelete = await props.deleteComment(props.itineraryId, commentData)
-      console.log(commentData)
-      console.log(awaitDelete)
+      props.deleteComment(props.itineraryId, commentData).then(
+         res=>{
+            if(res.success) {
+                props.getOneCitie(id)
+                props.getItineraries(id)
+                console.log("eliminadoOoOOo")
+                // props.findOneCity(id)
+              }
+         }
+      ).catch(
+         err=>console.log(err)
+      )
+      
       
 
-      if(awaitDelete.success) {
-        props.getOneCity(id)
-        props.getItineraries(id)
-        console.log("eliminadoOoOOo")
-        // props.findOneCity(id)
-      }
+     
     }
   
    

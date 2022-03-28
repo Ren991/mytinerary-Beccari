@@ -66,12 +66,12 @@ const itineraryController = {
   likeDislike:async (req,res) =>{
     const id=req.params.id //LLEGA POR PARAMETRO DESDE AXIOS
     const user = req.user.id //LLEGA POR RESPUESTA DE PASSPORT
-  console.log(id);
-  console.log(user);
+  //console.log(id);
+  //console.log(user);
    await Itinerary.findOne({_id: id})
 
     .then((itinerary) =>{
-        console.log(itinerary)
+        //console.log(itinerary)
         if(itinerary.likes.includes(user)){
           Itinerary.findOneAndUpdate({_id:id}, {$pull:{likes:user}},{new:true})//PULL QUITA, SACA
            .then((response)=> res.json({success:true, response:response.likes}))
