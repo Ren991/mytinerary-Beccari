@@ -7,6 +7,7 @@ import commentsActions from '../redux/actions/commentsActions';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import activitiesActions from '../redux/actions/activitiesActions';
+import Swal from 'sweetalert2'
 
 const Comment = (props) => {
   
@@ -31,6 +32,11 @@ const Comment = (props) => {
               props.getOneCitie(id)
               props.getItineraries(id)
               setReload(!reload)
+              Swal.fire(
+                'Good job!',
+                'Your comment has been sent!',
+                'success'
+              )
             }
         }  
       ).catch(
@@ -48,12 +54,12 @@ const Comment = (props) => {
                     </div>
                     <div className="card-body ">
                       <div >
-                        <input id="nuevoComentario" placeholder='Ingresa aqui tu comentario...' className="card-text textComments border border-dark mb-3" value={inputText} onChange={(event) => setInputText(event.target.value)} />
+                        <input id="nuevoComentario" placeholder='Write a comment...' className="card-text textComments border border-dark mb-3" value={inputText} onChange={(event) => setInputText(event.target.value)} />
                       </div>
-                      <button onClick={cargarComentario} className="btn btn-primary btnComments">Cargar</button>
+                      <button onClick={cargarComentario} className="btn btn-primary btnComments">Send</button>
                     </div>
                   </div> :
-                  <h1>Realiza singIn y dejanos tu comentario</h1>
+                  <h1 className='yourComment'>Leave us your comment by doing Sign in!!</h1>
                 }
             </> 
                 
@@ -68,14 +74,7 @@ const Comment = (props) => {
 
 
 const mapDispatchToProps = {
-         /*  findOneCity: citiesActions.findOneCity,
-          getOneItinerary:itinerariesActions.getOneItinerary,
-          itinerariesPerCity: itinerariesActions.itinerariesPerCity,
-          addComment: commentsActions.addComment,
-          modifiComment: commentsActions.modifiComment,
-          deleteComment: commentsActions.deleteComment,
-          likeDislike: itinerariesActions.likeDislike,
-          activityPerItinerary:activitiesActions.activityPerItinerary, */
+         
           getCities: citiesActions.getCities,//Las acciones de ciudades que necesito
           getActivities: activitiesActions.getActivities,
           getItineraries: itinerariesActions.getItineraries,
@@ -92,10 +91,7 @@ const mapStateToProps = (state) => {
     itineraries: state.itinerarieR.itineraries,
     activities:state.activitieR.activities,
     user:state.userR.user
-           /*  city: state.Data.city,
-            itineraries: state.itinerariesReducers.itineraries, 
-            user: state.userReducer.user, 
-            activities: state.activitiesReducers.activities, */
+    
              
   };
 };

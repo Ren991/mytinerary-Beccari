@@ -6,6 +6,7 @@ import Snack from "./snackbar";
 import FacebookSignIn from "./FacebookSignIn";
 
 function SignIn(props) {
+  window.scrollTo({ top: 0, behavior: "smooth" });
   const handleSubmit = (event) => {
     event.preventDefault();
     const logedUser = {

@@ -11,7 +11,7 @@ const itineraryController = {
   getOneItinerary: async (req, res) => {
     const id = req.params.id;
     //console.log(id);
-    const data = await Itinerary.find({ cityID: id });
+    const data = await Itinerary.find({ cityID: id }) .populate("comments.userID",{ name:1 , photo:1});
     //console.log(data);
     res.json({ succes: true, response: data });
   },
