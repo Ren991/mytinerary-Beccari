@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.04d61e36.css",
+    "main.js": "/static/js/main.34383064.js",
+    "static/js/787.d270b92e.chunk.js": "/static/js/787.d270b92e.chunk.js",
+    "static/media/airplane.gif": "/static/media/airplane.8c20ccf2a80d9cf7470b.gif",
+    "static/media/clock.png": "/static/media/clock.72319252f8b21bfd7b24.png",
+    "static/media/bridge.png": "/static/media/bridge.31ea85717ad7099de182.png",
+    "static/media/logo.png": "/static/media/logo.1e3990731f1ad88d522d.png",
+    "static/media/city.png": "/static/media/city.0633577053f05f6d2e67.png",
+    "index.html": "/index.html",
+    "main.04d61e36.css.map": "/static/css/main.04d61e36.css.map",
+    "main.34383064.js.map": "/static/js/main.34383064.js.map",
+    "787.d270b92e.chunk.js.map": "/static/js/787.d270b92e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04d61e36.css",
+    "static/js/main.34383064.js"
+  ]
+}
