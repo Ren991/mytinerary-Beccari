@@ -53,6 +53,8 @@ const Itineraries = (props) => {
   console.log(props.itinerary.comments);
 
   return (
+    
+    
     <Accordion className="detailsAccordion" defaultActiveKey="1">
       <h2 className="itineraryTitle">{props.itinerary.title}</h2>
       <div className="itineraryContainer">
@@ -65,6 +67,7 @@ const Itineraries = (props) => {
         <div className="priceItinerary">
           <h4>
             <p>Price:{"💵".repeat(parseInt(props.itinerary.price))}</p>
+           
           </h4>
         </div>
         <div className="userNameImg">
@@ -76,8 +79,11 @@ const Itineraries = (props) => {
               className="userImg"
             />
           </h4>
+          
+          
+        
         </div>
-
+        
         <div className="likesItinerary">
           <div className="likeDislike d-flex">
             {props.user ? (
@@ -114,11 +120,10 @@ const Itineraries = (props) => {
               </h3>
             }
           </div>
+          <p className="hashtag">{props.itinerary.hashtags}</p>
         </div>
 
-        <div>
-          <h5 className="hashtag">{props.itinerary.hashtags}</h5>
-        </div>
+        
       </div>
       <Accordion.Item eventKey="0">
         <Accordion.Header>
@@ -161,6 +166,7 @@ const Itineraries = (props) => {
             </div>
             
             <h2>Comments</h2>
+            <div className="comments">
             {props.itinerary.comments.map((comment) => (
               <Comments
                 itineraryId={props.id}
@@ -170,10 +176,12 @@ const Itineraries = (props) => {
               />
             ))}
             <Comment itineraryId={props.id} />
+            </div>
           </div>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+    
   );
 };
 

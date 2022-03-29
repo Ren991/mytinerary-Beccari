@@ -35,7 +35,7 @@ const CitiesDetails = (props) => {
           width="90%"
         />
       </div>
-      
+      <h1 className="popularTineraries">Popular Tineraries</h1>
       {props.itineraries.length !== 0 ? (
         props.itineraries.map((itinerary,index) => (
           <div key={index}>
@@ -48,6 +48,7 @@ const CitiesDetails = (props) => {
           We dont have itineraries for this citie yet
         </h4>
       )}
+     
       <LinkRouter to="/cities">
         <button className="buttonClick buttonCities">Go to cities</button>
       </LinkRouter>

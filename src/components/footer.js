@@ -10,7 +10,7 @@ const Footer = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <div className="mainFooter">
-      <h3>My Tinerary||All rights reserved </h3>
+      <h3 className="footerT ">My Tinerary||All rights reserved </h3>
       <img width="50rem" src={logo} />
       <LinkRouter to="/" className="FooterButton">
         Home
@@ -20,7 +20,7 @@ const Footer = () => {
         Cities
       </LinkRouter>
 
-      <h4>Do not miss the offers and promotions! follow us</h4>
+      <h4 className="footerT ">Do not miss the offers and promotions! follow us</h4>
       <div>
         <a href="#">
           <img width="45rem" src={instagram} />

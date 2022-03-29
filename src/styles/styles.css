@@ -79,6 +79,7 @@
 
 }
 
+
 /*Footer*/
 
 .mainFooter {
@@ -90,6 +91,10 @@ a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 1.3rem;
+}
+.footerT{
+  color: white;
+  margin-top:1rem;
 }
 /*CiTies*/
 .noCities{
@@ -154,7 +159,10 @@ a {
   margin-bottom:1rem;
 }
 /*CITIES ITINERARIES*/
-
+.popularTineraries{
+  margin-top:2rem;
+  margin-bottom:-2rem;
+}
 .detailsAccordion{
   width: 80%;
   margin-left: auto;
@@ -171,7 +179,7 @@ a {
   display:flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content:space-around;
+  justify-content:space-evenly;
   margin-bottom:1rem;
   
 }
@@ -189,6 +197,15 @@ a {
 }
 .userImg{
   border-radius: 1.5rem;
+}
+.hashtag{
+  font-size: 1rem;
+  
+}
+.comments{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*SignUp*/
 
@@ -316,10 +333,11 @@ flex-wrap: wrap;
   margin-top: 2rem;
 }
 .cardText{
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
 .comment{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  
 }
 .yourComment{
   margin-top: 2rem;
