@@ -3,8 +3,7 @@ import axios from 'axios';
 const commentsActions = {
     addComment: (itineraryId, comment) => {
         return async (dispatch, getState) => {
-            console.log(comment)
-            console.log(itineraryId)
+           
             try {
                 const token = localStorage.getItem('token')
                 const res = await axios.post('http://localhost:4000/api/allItineraries/comment/'+itineraryId, {...comment}, {
@@ -13,37 +12,14 @@ const commentsActions = {
                     }
                 })
             
-                console.log(res.data)
+                //console.log(res.data)
                 return {success:true, response:res}
             } catch (error) {
                 console.log(error)
             }
         }
-    }
-    /* addComment: (comment) => 
-     {
-     
-        const token = localStorage.getItem('token')
-        console.log(token);
-        return async (dispatch, getState) => {
-            const res = await axios.post('http://localhost:4000/api/allItineraries/comment', { comment }, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-                
-            })
-            dispatch({
-                type: 'message',
-                payload: {
-                    view: true,
-                    message: res.data.message,
-                    success: res.data.success
-                }
-                 })
-            return res
-        }
-        
-    }  */ ,
+    },
+    
     modifiComment: (commentId,comment) => {
         
         const token = localStorage.getItem('token')
@@ -54,7 +30,7 @@ const commentsActions = {
                         'Authorization': `Bearer ${token}`
                     }
                 })
-                console.log(res)
+                //console.log(res)
                 dispatch({
                     type: 'message',
                     payload: {
@@ -74,7 +50,7 @@ const commentsActions = {
     deleteComment: (id, commentId) => {
 
         const token = localStorage.getItem('token')
-        console.log(token)
+        //console.log(token)
         return async (dispatch, getState) => {
             const res = await axios.delete(`http://localhost:4000/api/allItineraries/comment/${id}`, {
                 headers: {

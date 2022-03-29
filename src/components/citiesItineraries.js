@@ -29,9 +29,6 @@ const Itineraries = (props) => {
     });
   }, [props.itineraries]);
 
-  console.log(props);
-  console.log(activities);
-
   async function likesOrDislikes() {
     await props.likeDislike(props.id);
     props.getItineraries(id);
@@ -47,13 +44,8 @@ const Itineraries = (props) => {
     });
     //window.location.reload(true);
   }
-
-  console.log(props.itinerary._id);
-  console.log(props.user);
-  console.log(props.itinerary.comments);
-
+   
   return (
-    
     
     <Accordion className="detailsAccordion" defaultActiveKey="1">
       <h2 className="itineraryTitle">{props.itinerary.title}</h2>

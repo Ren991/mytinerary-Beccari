@@ -7,7 +7,7 @@ import userActions from '../../redux/actions/userActions';
 function FacebookSignIn(props) {
 
   const responseFacebook = async (res) => {
-    console.log(res)
+    //console.log(res)
     const logedUser = {
       email: res.email,
       password: res.id,

@@ -13,7 +13,7 @@ import Avatar from "@mui/material/Avatar";
 import Swal from 'sweetalert2'
 
 const Comments = (props) => {
-  console.log(props);
+  
   const [expanded, setExpanded] = React.useState(false);
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -46,7 +46,6 @@ const Comments = (props) => {
       .then((res) => {
         if (res.data.success) {
           props.getItineraries(id);
-          console.log("eliminadoOoOOo");
           props.getOneCitie(id);
           setReload(!reload);
         }

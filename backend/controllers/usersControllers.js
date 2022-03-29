@@ -189,7 +189,7 @@ const sendEmail = async (email, uniqueString) => {
       <tr>
         <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
           
-          <img align="center" border="0" src="images/image-5.png" alt="Wrong Email" title="Wrong Email" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 30%;max-width: 159px;" width="159" class="v-src-width v-src-max-width"/>
+          <img align="center" border="0" src="https://www.bemytravelmuse.com/wp-content/uploads/2018/06/itineraries-1.png" alt="Wrong Email" title="Wrong Email" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 30%;max-width: 159px;" width="159" class="v-src-width v-src-max-width"/>
           
         </td>
       </tr>
@@ -266,7 +266,7 @@ const usersControllers = {
       res.redirect("http://localhost:3000/"); //REDIRECCIONA AL USUARIO A UNA RUTA DEFINIDA
       //return  res.json({success:true, response:"Su email se ha verificado correctamente"})
     } else {
-      res.json({ success: false, response: "Your email has not been verified" });
+      res.json({ success: false, response: "Your email has not been verified Su email no se ha verificado" });
     }
   },
 

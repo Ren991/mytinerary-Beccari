@@ -2,9 +2,9 @@ import axios from "axios";
 
 const userActions = {
   signUpUser: (userData) => {
-    console.log(
+    /*console.log(
       userData
-    ); /* en userData se envia la informacion que se recolecta en el form */
+    )*/
     return async (dispatch, getState) => {
       const res = await axios.post("http://localhost:4000/api/auth/signup", {
         userData,

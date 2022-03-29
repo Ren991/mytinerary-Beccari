@@ -22,13 +22,13 @@ function SignUp(props) {
   const [selectPaises, setSelectPaises] = useState("unselected");
 
   function selected(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     setSelectPaises(event.target.value);
   }
-  console.log(props);
+  //console.log(props);
   const handleSubmit = (event) => {
     event.preventDefault(); //evitamos el comportamiento por defecto (el refresco) ante el evento (submit), prevengo el refresco
-    console.log(event.target);
+    //console.log(event.target);
     const userData = {
       //recolecto los datos del formulario
       name: event.target[0].value,
@@ -36,7 +36,7 @@ function SignUp(props) {
       email: event.target[2].value,
       password: event.target[3].value,
       country: selectPaises,
-      photo: event.target[5].value,
+      photo: event.target[4].value,
       from: "form-Signup",
     };
     props.signUpUser(userData); //A la funcion signUpUser le paso todos los datos del objeto userData

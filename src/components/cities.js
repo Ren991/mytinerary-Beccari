@@ -28,7 +28,7 @@ const Cities = (props) => {
         </>
       );
     }
-    console.log(props.oneCity)
+    //console.log(props.oneCity)
     if (props.oneCity?.length === 0) {
       //Si no encuentra la ciudad que ingresamos en el input
       return (

@@ -23,10 +23,10 @@ const Comment = (props) => {
       const commentData = {
         comment: inputText,
       }
-      console.log(commentData)
+      //console.log(commentData)
       props.addComment(props.itineraryId, commentData).then(
         res=>{
-            console.log(res.response.data.success)
+            //console.log(res.response.data.success)
             if(res.response.data.success) {
               setInputText("")
               props.getOneCitie(id)

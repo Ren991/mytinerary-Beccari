@@ -71,7 +71,7 @@ const commentsControllers = {
         },
         { new: true }
       );
-      console.log(deleteComment);
+      //console.log(deleteComment);
       res.json({
         success: true,
         response: {deleteComment},

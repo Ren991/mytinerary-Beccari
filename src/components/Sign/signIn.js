@@ -18,7 +18,7 @@ function SignIn(props) {
     //console.log(event.target[1]);
   };
 
-  console.log(props);
+ 
   return (
     <div className="signInForm">
       <form className="signUpForm formIn" onSubmit={handleSubmit}>
